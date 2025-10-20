@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>Factura.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Factura.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">Ejercicio1</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">Factura </span><span class="s2">{</span>
+        <span class="s3">// Variables de instancia</span>
+        <span class="s0">private </span><span class="s1">String numeroPieza</span><span class="s2">;</span>
+        <span class="s0">private </span><span class="s1">String descripcionPieza</span><span class="s2">;</span>
+        <span class="s0">private int </span><span class="s1">cantidad</span><span class="s2">;</span>
+        <span class="s0">private double </span><span class="s1">precioPorArticulo</span><span class="s2">;</span>
+
+        <span class="s3">// Constructor que inicializa las variables</span>
+        <span class="s0">public </span><span class="s1">Factura</span><span class="s2">(</span><span class="s1">String numeroPieza</span><span class="s2">, </span><span class="s1">String descripcionPieza</span><span class="s2">, </span><span class="s0">int </span><span class="s1">cantidad</span><span class="s2">, </span><span class="s0">double </span><span class="s1">precioPorArticulo</span><span class="s2">) {</span>
+            <span class="s0">this</span><span class="s2">.</span><span class="s1">numeroPieza </span><span class="s2">= </span><span class="s1">numeroPieza</span><span class="s2">;</span>
+            <span class="s0">this</span><span class="s2">.</span><span class="s1">descripcionPieza </span><span class="s2">= </span><span class="s1">descripcionPieza</span><span class="s2">;</span>
+            <span class="s1">setCantidad</span><span class="s2">(</span><span class="s1">cantidad</span><span class="s2">); </span><span class="s3">// usamos el setter para aplicar validación</span>
+            <span class="s1">setPrecioPorArticulo</span><span class="s2">(</span><span class="s1">precioPorArticulo</span><span class="s2">); </span><span class="s3">// usamos el setter para aplicar validación</span>
+        <span class="s2">}</span>
+
+        <span class="s3">// Métodos set (establecer)</span>
+        <span class="s0">public void </span><span class="s1">setNumeroPieza</span><span class="s2">(</span><span class="s1">String numeroPieza</span><span class="s2">) {</span>
+            <span class="s0">this</span><span class="s2">.</span><span class="s1">numeroPieza </span><span class="s2">= </span><span class="s1">numeroPieza</span><span class="s2">;</span>
+        <span class="s2">}</span>
+
+        <span class="s0">public void </span><span class="s1">setDescripcionPieza</span><span class="s2">(</span><span class="s1">String descripcionPieza</span><span class="s2">) {</span>
+            <span class="s0">this</span><span class="s2">.</span><span class="s1">descripcionPieza </span><span class="s2">= </span><span class="s1">descripcionPieza</span><span class="s2">;</span>
+        <span class="s2">}</span>
+
+        <span class="s0">public void </span><span class="s1">setCantidad</span><span class="s2">(</span><span class="s0">int </span><span class="s1">cantidad</span><span class="s2">) {</span>
+            <span class="s3">// Validación: si es negativa, se pone en 0</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">cantidad </span><span class="s2">&gt; </span><span class="s4">0</span><span class="s2">) {</span>
+                <span class="s0">this</span><span class="s2">.</span><span class="s1">cantidad </span><span class="s2">= </span><span class="s1">cantidad</span><span class="s2">;</span>
+            <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+                <span class="s0">this</span><span class="s2">.</span><span class="s1">cantidad </span><span class="s2">= </span><span class="s4">0</span><span class="s2">;</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+
+        <span class="s0">public void </span><span class="s1">setPrecioPorArticulo</span><span class="s2">(</span><span class="s0">double </span><span class="s1">precioPorArticulo</span><span class="s2">) {</span>
+            <span class="s3">// Validación: si es negativa, se pone en 0.0</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">precioPorArticulo </span><span class="s2">&gt; </span><span class="s4">0.0</span><span class="s2">) {</span>
+                <span class="s0">this</span><span class="s2">.</span><span class="s1">precioPorArticulo </span><span class="s2">= </span><span class="s1">precioPorArticulo</span><span class="s2">;</span>
+            <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+                <span class="s0">this</span><span class="s2">.</span><span class="s1">precioPorArticulo </span><span class="s2">= </span><span class="s4">0.0</span><span class="s2">;</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+
+        <span class="s3">// Métodos get (obtener)</span>
+        <span class="s0">public </span><span class="s1">String getNumeroPieza</span><span class="s2">() {</span>
+            <span class="s0">return </span><span class="s1">numeroPieza</span><span class="s2">;</span>
+        <span class="s2">}</span>
+
+        <span class="s0">public </span><span class="s1">String getDescripcionPieza</span><span class="s2">() {</span>
+            <span class="s0">return </span><span class="s1">descripcionPieza</span><span class="s2">;</span>
+        <span class="s2">}</span>
+
+        <span class="s0">public int </span><span class="s1">getCantidad</span><span class="s2">() {</span>
+            <span class="s0">return </span><span class="s1">cantidad</span><span class="s2">;</span>
+        <span class="s2">}</span>
+
+        <span class="s0">public double </span><span class="s1">getPrecioPorArticulo</span><span class="s2">() {</span>
+            <span class="s0">return </span><span class="s1">precioPorArticulo</span><span class="s2">;</span>
+        <span class="s2">}</span>
+
+        <span class="s3">// Método que calcula el monto total de la factura</span>
+        <span class="s0">public double </span><span class="s1">obtenerMontoFactura</span><span class="s2">() {</span>
+            <span class="s0">return </span><span class="s1">cantidad </span><span class="s2">* </span><span class="s1">precioPorArticulo</span><span class="s2">;</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+
+</pre>
+</body>
+</html>
